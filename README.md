@@ -21,7 +21,8 @@ Porting the [JBoss EAP Quickstarts Kitchensink](https://github.com/jboss-develop
 2. Install [Quarkus](https://quarkus.io/get-started/) by following the get started guide,
 3. Run the application with `quarkus dev`,
 4. Run the tests by pressing `r`,
-5. Open the dev UI by pressing `w`.
+5. Open the dev UI by pressing `w`,
+6. Show UI by going to `http://localhost:8080/`.
 
 ## Design Decisions
 
