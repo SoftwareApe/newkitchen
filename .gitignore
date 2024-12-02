@@ -49,3 +49,5 @@ nb-configuration.xml
 
 # Example Project
 code-with-quarkus
+newkitchen
+*.zip

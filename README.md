@@ -8,6 +8,7 @@
     * [Migration process](#migration-process)
       * [Understanding what the application does](#understanding-what-the-application-does)
       * [Benchmarking the old application](#benchmarking-the-old-application)
+      * [Creating a starting point](#creating-a-starting-point)
       * [Continuous Testing](#continuous-testing)
 
 ## Goal
@@ -16,9 +17,11 @@ Porting the [JBoss EAP Quickstarts Kitchensink](https://github.com/jboss-develop
 
 ## How to build and run this application
 
-1. Install [Quarkus](https://quarkus.io/get-started/) by following the get started guide,
-2. Run the application with `quarkus dev`,
-3. Visit the dev UI at `localhost:8080/newsink`
+1. Install OpenJDK 21 and set your `JAVA_HOME` accordingly and use `mvn -v` (on Windows `.\mvnw.cmd -v`) to verify that your Java version is shown as 21,
+2. Install [Quarkus](https://quarkus.io/get-started/) by following the get started guide,
+3. Run the application with `quarkus dev`,
+4. Run the tests by pressing `r`,
+5. Open the dev UI by pressing `w`.
 
 ## Design Decisions
 
@@ -46,6 +49,12 @@ TODO
 #### Benchmarking the old application
 
 For a successful migration process we would normally establish a baseline for performance (e.g. latency, throughput). Since I don't have a RedHat subscription and no access to JBoss EAP, I will leave this step out.
+
+#### Creating a starting point
+
+Following the guide at `https://quarkus.io/guides/mongodb` we can use the Quarkus CLI to generate a basic application with `REST` and `MongoDB` support based on Java 21.
+
+`quarkus create app org.softwareape:newkitchen --java=21 --extension='rest-jackson,mongodb-client'`
 
 #### Continuous Testing
 
