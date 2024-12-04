@@ -19,14 +19,23 @@
             <form id="reg" action="/kitchensink/members/register" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
+                {#if errors.containsKey("name")}
+                <span class="error">{errors.get("name")}</span>
+                {/if}
                 <br>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                {#if errors.containsKey("email")}
+                <span class="error">{errors.get("email")}</span>
+                {/if}
                 <br>
                 <label for="phoneNumber">Phone #:</label>
                 <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                {#if errors.containsKey("phoneNumber")}
+                <span class="error">{errors.get("phoneNumber")}</span>
+                {/if}
                 <br>
-                <input type="submit" value="Register"/>
+                <input type="submit" value="Register" />
             </form>
         </section>
 
@@ -53,4 +62,5 @@
         </section>
     </main>
 </body>
+
 </html>
