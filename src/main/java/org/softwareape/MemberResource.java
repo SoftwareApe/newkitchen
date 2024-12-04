@@ -20,8 +20,8 @@ public class MemberResource {
 
     @GET
     @Produces(MediaType.TEXT_HTML)
-    public String getIndex() {
-        return index.data("members", members).render(); // Pass the member list to the template
+    public TemplateInstance getIndex() {
+        return index.data("members", members); // Pass the member list to the template
     }
 
     @POST
