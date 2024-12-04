@@ -54,7 +54,6 @@
 
         <section id="members">
             <h2>All Members</h2>
-            <button id="refresh">Refresh Member List</button>
             <table>
                 <thead>
                     <tr>
@@ -63,34 +62,17 @@
                         <th>Phone Number</th>
                     </tr>
                 </thead>
-                <tbody id="member-list">
-                    <!-- Dynamic member rows will be inserted here -->
+                <tbody>
+                    {#each members}
+                    <tr>
+                        <td>{it.name}</td>
+                        <td>{it.email}</td>
+                        <td>{it.phoneNumber}</td>
+                    </tr>
+                    {/each}
                 </tbody>
             </table>
         </section>
     </main>
-    <script>
-        // Fetch members and populate the table
-        document.getElementById('refresh').addEventListener('click', async () => {
-            const response = await fetch('/members');
-            if (response.ok) {
-                const members = await response.json();
-                const tableBody = document.getElementById('member-list');
-                tableBody.innerHTML = ''; // Clear existing rows
-
-                members.forEach(member => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${member.name}</td>
-                        <td>${member.email}</td>
-                        <td>${member.phoneNumber}</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } else {
-                alert('Failed to fetch members.');
-            }
-        });
-    </script>
 </body>
 </html>
