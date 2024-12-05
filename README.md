@@ -65,9 +65,9 @@ We choose Quarkus for this modernization since we see the overwhelming majority 
 
 ### Understanding what the application does
 
-To migrate an application it's first important to know what the application does. We first look at the source of our kitchensink application to gather clues. The name kitchensink doesn't tell us much, except that it probably tests a lot of features of the framework they want to demonstrate, as in the saying "Everything but the kitchen sink", which according to the Cambridge dictionary means [_almost all that you can imagine of something_](https://dictionary.cambridge.org/dictionary/english/everything-but-the-kitchen-sink).
+To migrate an application it's first important to know what the application does. We first look at the source of our kitchensink application to gather clues. Running the app we get a member registration form and a table showing the registered members. By looking at the index.xhtml we can see how the index.jsf is rendered. Looking at the REST endpoints we can see which methods are a available. The data model validation reveals rules about which data is regarded as valid.
 
-TODO
+![Original JBoss implementation](./images/jboss-original.png)
 
 ### Using a PoC to understand the tooling
 
@@ -77,7 +77,7 @@ We should test out all of the features we need to build the app according to our
 
 ### Benchmarking the old application
 
-For a successful migration process we would normally establish a baseline for performance (e.g. latency, throughput). Since I don't have a RedHat subscription and no access to JBoss EAP, I will leave this step out.
+For a successful migration process we would normally establish a baseline for performance (e.g. latency, throughput).
 
 ### Creating a starting point
 
@@ -95,7 +95,7 @@ Quarkus makes developing the application a breeze. The inbuilt templating functi
 
 For a production application we should create a CI/CD pipeline and a PR workflow based on continuous testing to avoid regressions. We should use container technology like Docker to avoid _works on my machine_ issues.
 
-In a production setting we should also continuously monitor application performance.
+In a production setting we should also continuously monitor application performance, as well as using Linters, auto-formatters, pre-commit rules and ideally static analysis to take as much of a load off the developers hands as possible.
 
 #### Logging
 
@@ -114,6 +114,8 @@ For acceptance of a modernized application it's important to convince not only t
 The original application looks like it was taken straight from the 90s. While this is functionally ok, there is a relationship between the attractiveness of an interface and its perceived usability, originally studied in 1995 by Kurosu, Kashimura[1] and later replicated in a different cultural contextand popularized by Donald Norman[2] famous for the book [The Design of Everyday Things](https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things). There are multiple hypotheses why this could be, e.g. that perceived attractiveness creates a more relaxed environment where the user is more forgiving of issues, feels more at ease to try things to make it work, and may even forget small usability issues they encountered.
 
 For this demonstrator we chose a restyling in material design. For a proper product it would be good to consult a design team.
+
+![Restyling of the main interface in material design](./images/material-design.png)
 
 [1] Kurosu, M. and Kashimura, K. Apparent usability vs. Inherent usability, CHI '95 Conference
 Companion, (1995), 292-293.
@@ -155,7 +157,7 @@ For the demonstrator this is out of scope, however nowadays a lot of users like 
 
 Since this is mainly a tech stack demonstrator it's good to add a link to the main technologies being used. In the original application the JBoss EAP Logo was prominently featured. However it could be misconstrued that the logo being displayed is the application itself. Some technology companies are famous for issueing lawsuits over trademark and copyright issues, especially Oracle. Therefore if we want to mention technologies we should analyze whether the company is generally ok with using their logo, and in which fashion it can be used.
 
-TODO: Insert original image here and comparison with new powered by footer.
+![Powered By Footer](./images/footer.png)
 
 For our demonstrator we used the MongoDB logo including the MongoDB text. Since it's mentioned on the [MongoDB brand resources page](https://www.mongodb.com/company/newsroom/brand-resources) that the leaf logo without the text shall only be used if the context makes it clear that this is MongoDB. Design wise it might look better if we have smaller logos, or all logos with text on the right, however the Quarkus logo with text on the right looks too heavy due to capitalization.
 
