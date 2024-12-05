@@ -39,8 +39,7 @@ public class MemberResource {
     public Response registerMember(@Valid @BeanParam MemberDTO member) {
         log.log(Level.INFO, "Adding member ");
 
-        // Save the new member to the database or in-memory list
-        // but only if the email doesn't exist yet
+        // Save the new member to the database, but only if the email doesn't exist yet
         if (MemberDTO.find("email", member.email).firstResultOptional().isEmpty()) {
             member.persist(); // Save to MongoDB
         }
