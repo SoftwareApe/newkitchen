@@ -16,6 +16,7 @@
       * [Reducing complexity with server-side rendering](#reducing-complexity-with-server-side-rendering)
     * [Rethinking UX](#rethinking-ux)
       * [Modern User Interface](#modern-user-interface)
+      * [Internationalization](#internationalization)
       * [Reactive Design](#reactive-design)
       * [Discoverability](#discoverability)
       * [Poka Yoke](#poka-yoke)
@@ -117,6 +118,10 @@ For this demonstrator we chose a restyling in material design. For a proper prod
 [1] Kurosu, M. and Kashimura, K. Apparent usability vs. Inherent usability, CHI '95 Conference
 Companion, (1995), 292-293.
 [2] Norman, Donald. (2002). Emotion & Design: Attractive Things Work Better. Interactions Magazine. 9. 36-42. 10.1145/543434.543435.
+
+#### Internationalization
+
+For a production application we should offer internationalization for all languages that are used by our customers. While English is universally used on the internet, some users may face issues if their language is not available.
 
 #### Reactive Design
 
