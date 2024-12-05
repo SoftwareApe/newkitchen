@@ -39,12 +39,14 @@ Porting the [JBoss EAP Quickstarts Kitchensink](https://github.com/jboss-develop
 
 ## How to build and run this application
 
-1. Install OpenJDK 21 and set your `JAVA_HOME` accordingly and use `mvn -v` (on Windows `.\mvnw.cmd -v`) to verify that your Java version is shown as 21,
+1. Install [OpenJDK 21](https://openjdk.org/),
 2. Install [Quarkus](https://quarkus.io/get-started/) by following the get started guide,
-3. Run the application with `quarkus dev`,
-4. Run the tests by pressing `r`,
-5. Open the dev UI by pressing `w`,
-6. Show UI by going to `http://localhost:8080/`.
+3. Set your `JAVA_HOME` accordingly and use `mvn -v` (on Windows `.\mvnw.cmd -v`) to verify that your Java version is shown as 21,
+4. [Install Docker](https://docs.docker.com/get-started/get-docker/).
+5. Run the application with `quarkus dev`,
+6. Run the tests by pressing `r`,
+7. Open the dev UI by pressing `w`,
+8. Show UI by going to `http://localhost:8080/`.
 
 ## Migration process
 
