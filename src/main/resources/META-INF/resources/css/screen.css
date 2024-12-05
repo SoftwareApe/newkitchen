@@ -28,6 +28,43 @@ header p {
   margin: 5px 0 0; /* Space above */
 }
 
+/* Matching footer section */
+footer {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light gray background */
+  text-align: center;
+  border-top: 1px solid #ddd; /* Thin border on top */
+}
+
+footer p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555; /* Subtle text color */
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between logos */
+}
+
+.footer-logos img {
+  height: 50px; /* Set a consistent height */
+  width: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.footer-logos img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+footer .disclaimer {
+  font-size: 0.8rem; /* Smaller text for disclaimer */
+  color: #777; /* Even subtler color for legal notice */
+  margin-top: 15px;
+}
+
 /* ========== Main Content Styles ========== */
 /* Central container with rounded corners and shadow */
 main {
