@@ -38,7 +38,6 @@ public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViol
 
         // Render the Qute template with error messages
         TemplateInstance instance = index.data("members", MemberResource.getMembers(), "errors", errors);
-        log.warning(instance.render());
 
         return Response.status(Response.Status.BAD_REQUEST)
                        .type(MediaType.TEXT_HTML)
