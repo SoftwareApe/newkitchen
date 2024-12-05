@@ -17,6 +17,19 @@ class MemberResourceTest {
     }
 
     @Test
+    public void testAddingMember() {
+        // Step 1: Create a member
+        given()
+            .formParam("name", "John Doe")
+            .formParam("email", "duplicate@example.com")
+            .formParam("phoneNumber", "1234567890")
+            .when()
+            .post("/kitchensink/members/register")
+            .then()
+            .statusCode(200); // Created
+    }
+
+    @Test
     public void testDuplicateEmail() {
         // Step 1: Create a member
         given()
