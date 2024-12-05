@@ -37,6 +37,7 @@ public class MemberResource {
     @Path("/members/register")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_HTML)
+    @Trimmed
     public Response registerMember(@Valid @BeanParam MemberDTO member) {
         log.log(Level.INFO, "Adding member ");
 
