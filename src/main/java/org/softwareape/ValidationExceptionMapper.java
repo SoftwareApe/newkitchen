@@ -31,7 +31,7 @@ public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViol
             // For some reason we get the whole path here e.g. registerMember.member.phoneNumber
             String[] fieldSplit = field.split("\\.");
             field = fieldSplit[fieldSplit.length - 1];
-            errors.put(field, violation.getMessage());
+            errors.put(field, "\u26A0 " + violation.getMessage());
             log.log(Level.WARNING, "Getting a validation error here for: " + field);
             log.warning(errors.get(field));
         }
