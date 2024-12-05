@@ -11,6 +11,7 @@ import jakarta.validation.Valid;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.lang.reflect.Member;
 import java.net.URI;
 import java.util.Collections;
 
@@ -49,5 +50,16 @@ public class MemberResource {
 
         // Redirect back to the refreshed index page
         return Response.seeOther(URI.create("/kitchensink")).build();
+    }
+
+    @GET
+    @Path("/members/{id:[0-9a-f]{24}}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getMemberById(@PathParam("id") String id) {
+        MemberDTO member = MemberDTO.findById(new org.bson.types.ObjectId(id));
+        if (member == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(member).build();
     }
 }
