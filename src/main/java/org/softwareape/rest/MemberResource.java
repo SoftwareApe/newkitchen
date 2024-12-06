@@ -6,6 +6,7 @@ import jakarta.ws.rs.core.Response;
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
 import java.util.List;
@@ -21,7 +22,7 @@ import org.softwareape.util.Trimmed;
 @Path("/kitchensink")
 public class MemberResource {
     private static final Logger log = Logger.getLogger(MemberResource.class.getName());
-    
+
     @Inject
     Template index; // Inject the Qute template
 
@@ -41,6 +42,7 @@ public class MemberResource {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_HTML)
     @Trimmed
+    @Transactional
     public Response registerMember(@Valid @BeanParam MemberDTO member) {
         log.log(Level.INFO, "Adding member ");
 
