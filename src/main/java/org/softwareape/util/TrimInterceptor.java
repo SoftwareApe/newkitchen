@@ -8,6 +8,7 @@ import jakarta.interceptor.Interceptor;
 import jakarta.interceptor.InvocationContext;
 
 @Interceptor
+@Priority(0)
 @Trimmed
 public class TrimInterceptor {
     private static final Logger log = Logger.getLogger(TrimInterceptor.class.getName());
