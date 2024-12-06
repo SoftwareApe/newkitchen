@@ -10,7 +10,6 @@ import jakarta.ws.rs.FormParam;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
-// TODO: Create unique index on email for faster lookup
 @MongoEntity
 public class MemberDTO extends PanacheMongoEntity {
     @NotNull
