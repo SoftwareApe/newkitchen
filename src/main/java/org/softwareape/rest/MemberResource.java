@@ -57,10 +57,10 @@ public class MemberResource {
     }
 
     @GET
-    @Path("/members/{id:[0-9a-f]{24}}")
+    @Path("/members/{id:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMemberById(@PathParam("id") String id) {
-        MemberDTO member = MemberDTO.findById(new org.bson.types.ObjectId(id));
+        MemberDTO member = MemberDTO.findById(id);
         if (member == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
