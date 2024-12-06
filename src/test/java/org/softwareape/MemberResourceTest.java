@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static io.quarkus.mongodb.panache.PanacheMongoEntityBase.mongoDatabase;
 
 @QuarkusTest
 class MemberResourceTest {
