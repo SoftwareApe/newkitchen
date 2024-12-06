@@ -1,4 +1,4 @@
-package org.softwareape;
+package org.softwareape.rest;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -13,6 +13,10 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.net.URI;
 import java.util.Collections;
+
+import org.softwareape.data.MemberDTO;
+import org.softwareape.validation.ValidationUtils;
+import org.softwareape.util.Trimmed;
 
 @Path("/kitchensink")
 public class MemberResource {

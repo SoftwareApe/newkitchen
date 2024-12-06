@@ -1,10 +1,12 @@
-package org.softwareape;
+package org.softwareape.rest;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import static io.restassured.RestAssured.given;
+
+import org.softwareape.data.MemberDTO;
 
 @QuarkusTest
 class MemberResourceTest {

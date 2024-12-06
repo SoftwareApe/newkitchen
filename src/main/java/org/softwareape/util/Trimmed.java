@@ -1,4 +1,4 @@
-package org.softwareape;
+package org.softwareape.util;
 
 import jakarta.interceptor.InterceptorBinding;
 import java.lang.annotation.ElementType;

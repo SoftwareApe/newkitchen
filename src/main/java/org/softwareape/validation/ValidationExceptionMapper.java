@@ -1,4 +1,4 @@
-package org.softwareape;
+package org.softwareape.validation;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+
+import org.softwareape.rest.MemberResource;
 
 @Provider
 public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViolationException> {

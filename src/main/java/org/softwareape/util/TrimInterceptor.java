@@ -1,7 +1,8 @@
-package org.softwareape;
+package org.softwareape.util;
 
 import java.util.logging.Logger;
 
+import jakarta.annotation.Priority;
 import jakarta.interceptor.AroundInvoke;
 import jakarta.interceptor.Interceptor;
 import jakarta.interceptor.InvocationContext;
@@ -9,7 +10,7 @@ import jakarta.interceptor.InvocationContext;
 @Interceptor
 @Trimmed
 public class TrimInterceptor {
-    private static final Logger log = Logger.getLogger(MemberResource.class.getName());
+    private static final Logger log = Logger.getLogger(TrimInterceptor.class.getName());
 
     @AroundInvoke
     public Object trimStrings(InvocationContext context) throws Exception {

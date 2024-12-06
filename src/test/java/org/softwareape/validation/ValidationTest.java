@@ -1,4 +1,4 @@
-package org.softwareape;
+package org.softwareape.validation;
 
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -12,9 +12,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.softwareape.data.MemberDTO;
+
 @QuarkusTest
 public class ValidationTest {
-    private static final Logger log = Logger.getLogger(MemberResource.class.getName());
+    private static final Logger log = Logger.getLogger(ValidationTest.class.getName());
     @Test
     void testNameValidation() {
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();

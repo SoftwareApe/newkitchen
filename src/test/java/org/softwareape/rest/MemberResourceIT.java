@@ -1,4 +1,4 @@
-package org.softwareape;
+package org.softwareape.rest;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
